@@ -8,7 +8,7 @@ PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = {'*'}
+ALLOWED_HOSTS = {'localhost'}
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -17,13 +17,17 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': path.join(PROJECT_ROOT, 'db.sqlite3'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+     'default': {
+         'ENGINE': 'sqlserver_ado',
+         'NAME': 'findabook',
+         'USER': 'GroupMember-415',
+         'PASSWORD': 'Password1',
+         'HOST': '415gp.database.windows.net',
+         'PORT': '',
+         'OPTIONS': {
+             'provider': 'SQLOLEDB',
+             'use_legacy_date_fields': 'True'
+         }
     }
 }
 
