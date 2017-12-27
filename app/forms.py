@@ -3,6 +3,7 @@ Definition of forms.
 """
 
 from django import forms
+from .models import Rating
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
 
@@ -16,3 +17,10 @@ class BootstrapAuthenticationForm(AuthenticationForm):
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Password'}))
+
+
+class recommendForm(forms.ModelForm):
+
+	class Meta:
+		model = Rating
+		fields = ('book_id', 'rating')
