@@ -1,0 +1,28 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+
+<form action="/recommender/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="OK">
+</form>
+{%if result != None %}
+    <div>
+        <h3>Here are our recommendations based on your selection</h3>
+        <ul>
+          {% for book, title in result.items %}
+            {% if book != 'Item'%}
+              <li>{{ title }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+    </div>
+  {% endif %}
+
+
+{% endblock %}
