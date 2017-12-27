@@ -52,6 +52,19 @@ def about(request):
         })
     )
 
+def dashboard(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/dashboard.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'Dashboard',
+            'message':'Data visualization powered by tableau',
+        })
+    )
+
 def recommender(request):
 
     if request.body is not '':
