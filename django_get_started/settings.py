@@ -8,7 +8,7 @@ PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = {'localhost'}
+ALLOWED_HOSTS = {'*'}
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
