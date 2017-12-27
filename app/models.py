@@ -18,9 +18,6 @@ class Books(models.Model):
     ratings_4 = models.IntegerField()
     ratings_5 = models.IntegerField()
 
-    class Meta:
-        ordering = ('title',)
-
 
     def __unicode__(self):
         return self.title + " by " + self.authors
